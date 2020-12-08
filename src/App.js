@@ -5,18 +5,17 @@ import './App.css';
 class App extends React.Component{
   constructor (){
   super();
+
+
     this.state = {
-      employees: [
-        {
-          name: 'Jann Mcihael Albite',
-          id: '16-0705'
-        },
-        {
-          name: 'Regine Eunice Raganas',
-          id: '17-0595'
-        }
-      ]
-    }  
+      employees: []
+    };  
+  }
+
+  componentDidMount(){
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => this.setState({employees: users}));
   }
 
   render() {
@@ -24,8 +23,7 @@ class App extends React.Component{
       <div className="App">
        <h1>My App</h1>
         {this.state.employees.map(employee => (
-          <h2 key={employee.id}> {employee.name} </h2>
-            ))}
+          <h2 key={employee.id}> {employee.name} </h2>))}
       </div>
     );
   }
