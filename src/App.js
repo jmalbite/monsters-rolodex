@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import './App.css';
+import CardList from './components/card-list/card-list'
 
 class App extends React.Component{
   constructor (){
@@ -22,8 +23,9 @@ class App extends React.Component{
     return (
       <div className="App">
        <h1>My App</h1>
-        {this.state.employees.map(employee => (
-          <h2 key={employee.id}> {employee.name} </h2>))}
+        <CardList 
+          users={this.state.employees}
+        />
       </div>
     );
   }
