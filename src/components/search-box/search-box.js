@@ -10,6 +10,7 @@ const SearchBox = (props) => {
 				id='SearchMonster'
 				variant='outlined'
 				label='Search Monster'
+				onChange={props.onChange}
 			></TextField>
 		</form>
 	);

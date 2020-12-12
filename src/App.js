@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import CardList from "./components/card-list/card-list";
 import SearchBox from "./components/search-box/search-box";
+import Slider from "@material-ui/core/Slider";
 
 class App extends React.Component {
 	constructor() {
@@ -9,6 +10,7 @@ class App extends React.Component {
 
 		this.state = {
 			employees: [],
+			searchField: "",
 		};
 	}
 
@@ -19,11 +21,17 @@ class App extends React.Component {
 	}
 
 	render() {
+		const { employees, searchField } = this.state;
+		const filteredEmployees = employees.filter((employee) =>
+			employee.name.toLowerCase().includes(searchField.toLowerCase())
+		);
 		return (
 			<div className='App'>
 				<h1>Monster Rolodex</h1>
-				<SearchBox />
-				<CardList users={this.state.employees} />
+				<SearchBox
+					onChange={(e) => this.setState({ searchField: e.target.value })}
+				/>
+				<CardList users={filteredEmployees} />
 			</div>
 		);
 	}
