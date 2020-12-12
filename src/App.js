@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import CardList from "./components/card-list/card-list";
 import SearchBox from "./components/search-box/search-box";
-import Slider from "@material-ui/core/Slider";
+import "./index.css";
 
 class App extends React.Component {
 	constructor() {

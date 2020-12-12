@@ -4,8 +4,11 @@
 }
 
 h1 {
+	font-family: "Bigelow Rules";
 	display: flex;
 	justify-content: center;
-	margin-top: 30px;
-	margin-bottom: 50px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-size: 70px;
+	color: #8237d8;
 }
