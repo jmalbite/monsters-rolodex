@@ -14,7 +14,7 @@ const CardList = (props) => {
 				justify='center'
 			>
 				{props.users.map((employee) => (
-					<Grid item xs={12} sm={3}>
+					<Grid item xs={12} sm={3} key={employee.id}>
 						<CardItem name={employee.name} id={employee.id} />
 					</Grid>
 				))}

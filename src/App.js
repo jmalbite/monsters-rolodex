@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import CardList from "./components/card-list/card-list";
+import SearchBox from "./components/search-box/search-box";
 
 class App extends React.Component {
 	constructor() {
@@ -21,6 +22,7 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<h1>Monster Rolodex</h1>
+				<SearchBox />
 				<CardList users={this.state.employees} />
 			</div>
 		);
