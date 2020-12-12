@@ -20,6 +20,10 @@ class App extends React.Component {
 			.then((users) => this.setState({ employees: users }));
 	}
 
+	handleChange = (e) => {
+		this.setState({ searchField: e.target.value });
+	};
+
 	render() {
 		const { employees, searchField } = this.state;
 		const filteredEmployees = employees.filter((employee) =>
@@ -28,9 +32,7 @@ class App extends React.Component {
 		return (
 			<div className='App'>
 				<h1>Monster Rolodex</h1>
-				<SearchBox
-					onChange={(e) => this.setState({ searchField: e.target.value })}
-				/>
+				<SearchBox onChange={this.handleChange} />
 				<CardList users={filteredEmployees} />
 			</div>
 		);
